@@ -12,5 +12,7 @@ router.delete('/commandes/:id_commande', commandeController.deleteCommande);
 router.get('/commandes/:id_commande', commandeController.getCommande);
 // Getting Commande From a Bar Function
 router.get('/bars/:id_bar/commandes', commandeController.getCommandesByBar);
+// Get all commandes
+router.get('/commandes', commandeController.getAllCommandes);
 
 module.exports = router;

@@ -113,3 +113,14 @@ exports.deleteBiere = async (req, res) => {
     res.status(500).json({ message: 'Erreur serveur' });
   }
 };
+
+// Récupérer toutes les bières
+exports.getAllBieres = async (req, res) => {
+  try {
+    const bieres = await Biere.findAll();
+    res.json(bieres);
+  } catch (error) {
+    console.error('Erreur lors de la récupération des bières :', error);
+    res.status(500).json({ message: 'Erreur serveur' });
+  }
+};

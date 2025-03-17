@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const biereController = require('../controllers/biereController');
 
+// Récupérer toutes les bières
+router.get('/bieres', biereController.getAllBieres);
 // Create a biere for a Bar Function
 router.post('/bars/:id_bar/biere', biereController.createBiere);
 // Get all biere from a Bar Function

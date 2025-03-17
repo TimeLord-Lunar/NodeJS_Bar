@@ -155,4 +155,18 @@ exports.getCommandesByBar = async (req, res) => {
   }
 };
 
-// préparation ultime 
+// Get all Commandes
+exports.getAllCommandes = async (req, res) => {
+  try {
+    const commandes = await Commande.findAll();
+    
+    if (commandes.length === 0) {
+      return res.status(404).json({ message: 'Aucune commande trouvée.' });
+    }
+
+    res.json(commandes);
+  } catch (error) {
+    console.error('Erreur lors de la récupération des commandes :', error);
+    res.status(500).json({ message: 'Erreur serveur' });
+  }
+};

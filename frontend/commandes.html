@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Commandes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestion des Commandes</h1>
+
+        <button onclick="document.getElementById('createCommandeForm').style.display = 'block'">Créer une Commande</button>
+
+        <div id="createCommandeForm" style="display:none;">
+            <h2>Créer ou Modifier une Commande</h2>
+            <form id="addCommandeForm">
+                <input type="hidden" id="commandeId" value="">
+                <input type="text" id="name" placeholder="Nom de la commande" required>
+                <input type="number" id="prix" placeholder="Prix (€)" step="0.01" required>
+                <input type="number" id="bars_id" placeholder="ID du bar" required>
+                <input type="date" id="date" required>
+                <select id="status">
+                    <option value="brouillon">Brouillon</option>
+                    <option value="en cours">En cours</option>
+                    <option value="terminée">Terminée</option>
+                </select>
+                <button type="submit">Ajouter</button>
+            </form>
+        </div>
+
+        <h2>Liste des Commandes</h2>
+        <ul id="commandesList">
+            <!-- Listes commandes ici -->
+        </ul>
+    </div>
+
+    <div id="commandeDetails" style="display: none; border-top: 2px solid #000; margin-top: 20px; padding-top: 10px;">
+        <h2>Détails de la Commande</h2>
+        <p><strong>Nom :</strong> <span id="detailName"></span></p>
+        <p><strong>Prix :</strong> <span id="detailPrix"></span> €</p>
+        <p><strong>ID du Bar :</strong> <span id="detailBarsId"></span></p>
+        <p><strong>Date :</strong> <span id="detailDate"></span></p>
+        <p><strong>Status :</strong> <span id="detailStatus"></span></p>
+    </div>
+
+    <!-- Détails de la Commande et Bières -->
+<div id="commandeBieresSection" style="display:none; text-align: center; margin-top: 20px;">
+    <h2>Détails des Bières de la Commande</h2>
+    <div id="commandeBieresList">
+        <!-- Liste des bières liées à la commande -->
+    </div>
+    <button onclick="showAddBiereForm()">Ajouter une Bière</button>
+</div>
+
+<!-- Formulaire d'ajout de bière -->
+<div id="addBiereForm" style="display:none; text-align: center; margin-top: 20px;">
+    <h3>Ajouter une bière à la commande</h3>
+    <input type="hidden" id="commandeIdForBiere" value=""> 
+    <input type="number" id="biereId" placeholder="Entrez l'ID de la bière" required inputmode="numeric" min="1" />
+    <button onclick="addBiereToCommande()">Ajouter la bière</button>
+    <button onclick="document.getElementById('addBiereForm').style.display='none'">Annuler</button>
+</div>    
+
+
+    <script src="commandes.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Bières</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestion des Bières</h1>
+
+        <button onclick="document.getElementById('createBiereForm').style.display = 'block'">Créer une Bière</button>
+
+
+        <div id="createBiereForm" style="display:none;">
+            <h2>Créer ou Modifier une Bière</h2>
+            <form id="addBiereFormBiere">
+                <input type="hidden" id="biereId" value="">
+                <input type="text" id="name" placeholder="Nom de la bière" required>
+                <textarea id="description" placeholder="Description"></textarea>
+                <input type="number" id="degree" placeholder="Degré" step="0.1" required>
+                <input type="number" id="prix" placeholder="Prix (€)" step="0.01" required>
+                <input type="number" id="bars_id" placeholder="ID du bar" required>
+                <button type="submit">Ajouter</button>
+            </form>
+        </div>
+
+        <h2>Liste des Bières</h2>
+        <ul id="bieresList">
+            <!-- Liste biere ici -->
+        </ul>
+    </div>
+
+    <script src="biere.js"></script>
+</body>
+</html>

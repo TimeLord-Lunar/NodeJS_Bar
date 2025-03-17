@@ -65,21 +65,25 @@ Quand je supprime un bar, je supprime toutes les bières et les commandes associ
 Quand je supprime une bière, je supprime toutes les commandes associées	--- FONCTIONNEL
 Quand je supprime une commande, je supprime toutes les biere_commande associées --- FONCTIONNEL
 
+Etape 3 après changement de programe :
+La partie bonus numéro 3 qui n'est finalement plus un bonus parce que 0 communication et infos contradictoires en haut.
 
+Frontend : FONCTIONNEL pour toutes les commandes marquées comme FONCTIONNEL, potentiellement une contrainte pas respectée.
 
-Etape 3 : Commandes avancées de niveau 1 
+Etape 3 avant changement de programme : Commandes avancées de niveau 1 
 
 COMMANDES :
 
 GET /bars/:id_bar/commandes?date=2021-01-01 => Liste des commandes d'un bar à une date donnée
 GET /bars/:id_bar/commandes?prix_min=10&prix_max=20 => Liste des commandes d'un bar avec un prix compris entre 10 et 20
+
 GET /bars?ville=Paris => Liste des bars d'une ville donnée	--- FONCTIONNEL
 GET /bars?name=example => Liste des bars dont le nom contient "example" --- FONCTIONNEL
 GET /bars/:id_bar/degree => Degré d'alcool moyen des bières d'un bar	--- FONCTIONNEL
 
 
 
-Etape 4 : Commandes avancée de niveau 2
+Etape 4 avant changement de programme : Commandes avancée de niveau 2
 
 COMMANDES :
 

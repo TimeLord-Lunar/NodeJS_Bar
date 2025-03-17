@@ -26,7 +26,7 @@ const Bar = sequelize.define('Bar', {
   },
 }, {
   tableName: 'Bars',
-  timestamps: false, // Pas besoin de timestamp dans ce cas
+  timestamps: false,
 });
 
 module.exports = Bar;

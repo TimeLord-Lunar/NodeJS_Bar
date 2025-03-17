@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion des Bars</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gestion des Bars</h1>
+    
+    <button onclick="showCreateForm()">Créer un Bar</button>
+    
+    <div id="createBarForm" style="display:none;">
+      <h2>Créer ou Modifier un Bar</h2>
+      <form id="barForm">
+        <input type="text" id="name" placeholder="Nom du bar" required>
+        <input type="text" id="adresse" placeholder="Adresse" required>
+        <input type="tel" id="tel" placeholder="Téléphone" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <textarea id="description" placeholder="Description"></textarea>
+        <button type="submit">Ajouter</button>
+      </form>
+    </div>
+
+    <h2>Liste des Bars</h2>
+    <table id="barsTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Adresse</th>
+          <th>Téléphone</th>
+          <th>Email</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Listes des bars ici -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="bars.js"></script>
+</body>
+</html>
